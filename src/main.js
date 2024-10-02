@@ -28,16 +28,7 @@ function command(){
     console.log("Invalid command");
   }
 }
-//
-// function update(){
-//   if(input.value.charAt(input.value.length-1) == "\n"){
-//     console.log("end of line");
-//     command();
-//   }
-//   cmd = input.value
-//   // output.innerHTML = cmd;
-// }
 
 function execute(){
-  carrot.innerHTML="Fucked"
+  carrot.innerHTML=path.innerHTML+prompt.innerHTML+input.value+" no more"
 }

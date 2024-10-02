@@ -9,7 +9,7 @@ textarea{
     resize: none;
     outline: none;
 
-    font-size: 18px;
+    font-size: 20px;
 }
 
 #path{
@@ -26,6 +26,7 @@ textarea{
 
 body{
   font-family: "Calibri";
+  font-size: 20px;
 }
 
 .carrot{
