@@ -11,9 +11,13 @@ let vars = {};
 export default function execute(doc, str_cmd){
     return new Promise((resolve)=>{
 	const command = str_cmd.split(" ")
-	if(command[0] in getcommands()){
+	
+	if(command[0] in get_commands()){
 	    get_commands()[command[0]](doc,command)
+	}else{
+	    print(doc, new Array(command[0], `Command not found: "${command[0]}"`))
 	}
+	
 	console.log(`Executed: ${command}`);
 	resolve();
     });
