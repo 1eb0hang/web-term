@@ -1,9 +1,11 @@
-import print from "./command_list.js"
+import {print, def, input} from "./command_list.js"
 
+const doc = document;
 let commands = {
     "set":add_command,
     "print":print,
-    "help":()=>print(document, new Array("help", "message that provides ehlp"))
+    "help":()=>print(doc, new Array("help", "message that provides ehlp")),
+    "input":input
 };
 let vars = {};
 
