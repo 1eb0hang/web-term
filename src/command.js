@@ -2,7 +2,8 @@ import print from "./command_list.js"
 
 let commands = {
     "set":add_command,
-    "print":print
+    "print":print,
+    "help":()=>print(document, new Array("help", "message that provides ehlp"))
 };
 let vars = {};
 
@@ -10,7 +11,9 @@ let vars = {};
 export default function execute(doc, str_cmd){
     return new Promise((resolve)=>{
 	const command = str_cmd.split(" ")
-	get_commands()[command[0]](doc,command)
+	if(command[0] in getcommands()){
+	    get_commands()[command[0]](doc,command)
+	}
 	console.log(`Executed: ${command}`);
 	resolve();
     });

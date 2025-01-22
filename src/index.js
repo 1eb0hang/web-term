@@ -16,6 +16,7 @@ function createNewLine() {
     const textArea = document.createElement('textarea');
     textArea.className = 'text-area';
     textArea.rows = 1;
+    textArea.style.margin=1;
 
     textArea.addEventListener('keypress', async (e) => {
         if (e.key === 'Enter') {
@@ -25,7 +26,7 @@ function createNewLine() {
             // Replace text area with a paragraph
             const output = document.createElement('p');
             output.textContent = command;
-            output.style.margin = 0;
+            output.style.margin = 1;
             line.replaceChild(output, textArea);
 
             // Call execute and create a new line after completion
