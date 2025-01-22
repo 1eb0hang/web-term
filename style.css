@@ -1,0 +1,34 @@
+body {
+    font-family: monospace;
+    background-color: #000;
+    color: #0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.line {
+    display: flex;
+    align-items: baseline;
+}
+
+.prompt {
+    flex-shrink: 0;
+    margin-right: 5px;
+}
+
+.text-area {
+    background: none;
+    border: none;
+    outline: none;
+    color: inherit;
+    width: 100%;
+    resize: none;
+    font: inherit;
+}
+
+.text-area:focus {
+    outline: none;
+}
