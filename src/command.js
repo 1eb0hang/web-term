@@ -17,7 +17,7 @@ export default function execute(doc, call, str_cmd){
 	if(command[0] in get_commands()){
 	    get_commands()[command[0]](doc,call,command)
 	}else{
-	    print(doc, new Array(command[0], `Command not found: "${command[0]}"`))
+	    print(doc,call, new Array(command[0], `Command not found: "${command[0]}"`))
 	}
 	
 	console.log(`Executed: ${command}`);

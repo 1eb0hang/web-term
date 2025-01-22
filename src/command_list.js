@@ -1,6 +1,13 @@
 
 export const help = (doc, call, value)=>{
-    print(doc,null, new Array("help", "message that provides ehlp"));
+    const help = [
+	"help  : display help message",
+	"input : takes user input", 
+	"print : prints given text"
+    ]
+    for(let i = 0; i<help.length; i+=1){
+	print(doc,null, new Array("", help[i]));
+    }
     call();
 }
 
@@ -12,16 +19,11 @@ export const print = (doc, call, value)=>{
     output.textContent = (value.slice(1, value.length)).join(" ");
     output.style.margin = 0;
     term.appendChild(output);
-    // console.log(term);
-    if(call == null){
-    call=()=>{return null;}
+    console.log(output.textContent);
+    if(call != null){
+	call()
     }
-    call()
 }
-
-// const print_str(string){
-//     print()
-// }
 
 export function input(doc, call, str_prompt){
     const term = doc.getElementById("terminal")
