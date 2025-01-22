@@ -1,9 +1,10 @@
 
-export const def = (doc, value)=>{
-    console.log("Hello world")
+export const help = (doc, call, value)=>{
+    print(doc,null, new Array("help", "message that provides ehlp"));
+    call();
 }
 
-export const print = (doc, value)=>{
+export const print = (doc, call, value)=>{
     //console.log(value);
     const term = doc.getElementById("terminal")
     const output = doc.createElement('p');
@@ -12,9 +13,17 @@ export const print = (doc, value)=>{
     output.style.margin = 0;
     term.appendChild(output);
     // console.log(term);
+    if(call == null){
+    call=()=>{return null;}
+    }
+    call()
 }
 
-export function input(doc, str_prompt){
+// const print_str(string){
+//     print()
+// }
+
+export function input(doc, call, str_prompt){
     const term = doc.getElementById("terminal")
     // const output = document.createElement('p');
     
@@ -44,7 +53,7 @@ export function input(doc, str_prompt){
 	    line.replaceChild(output, textArea);
 	    await get_return(string, console.log, string);
 	    // Call execute and create a new line after completion
-            
+            call()
 	}
     });
 
@@ -52,6 +61,7 @@ export function input(doc, str_prompt){
     line.appendChild(prompt);
     line.appendChild(textArea);
     terminal.appendChild(line);
+    textArea.focus();
     
 }
 

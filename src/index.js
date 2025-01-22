@@ -30,8 +30,8 @@ function createNewLine() {
             line.replaceChild(output, textArea);
 
             // Call execute and create a new line after completion
-            await execute(document, command);
-            createNewLine();
+            await execute(document, createNewLine, command);
+            //createNewLine();
         }
     });
 
@@ -46,3 +46,18 @@ function createNewLine() {
 
 // Initialize the terminal with the first line
 createNewLine();
+
+// function myLoop(){
+  
+//   // do something that takes a while
+//   setTimeout(function(){
+//      console.log("did something");
+//      prompt("Message to the user", "Default Value")
+//      // then recurse...
+//      myLoop();
+     
+//   }, 0);
+  
+// }
+
+// myLoop()

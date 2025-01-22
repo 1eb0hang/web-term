@@ -1,21 +1,21 @@
-import {print, def, input} from "./command_list.js"
+import {print, help, input} from "./command_list.js"
 
 const doc = document;
 let commands = {
     "set":add_command,
     "print":print,
-    "help":()=>print(doc, new Array("help", "message that provides ehlp")),
+    "help":help,
     "input":input
 };
 let vars = {};
 
 
-export default function execute(doc, str_cmd){
+export default function execute(doc, call, str_cmd){
     return new Promise((resolve)=>{
 	const command = str_cmd.split(" ")
 	
 	if(command[0] in get_commands()){
-	    get_commands()[command[0]](doc,command)
+	    get_commands()[command[0]](doc,call,command)
 	}else{
 	    print(doc, new Array(command[0], `Command not found: "${command[0]}"`))
 	}
