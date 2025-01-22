@@ -1,14 +1,4 @@
-
-function execute(command) {
-    return new Promise((resolve) => {
-        // setTimeout(() => {
-        //     console.log(`Executed: ${command}`); // Replace this with actual execution logic
-        //     resolve();
-        // }, 500); // Simulate execution delay
-	console.log(`Executed: ${command}`);
-	resolve();
-    });
-}
+import execute from "./command.js"
 
 function createNewLine() {
     const terminal = document.getElementById('terminal');
