@@ -29,7 +29,7 @@ function createNewLine() {
             line.replaceChild(output, textArea);
 
             // Call execute and create a new line after completion
-            await execute(command);
+            await execute(document, command);
             createNewLine();
         }
     });

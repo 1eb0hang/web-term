@@ -1,5 +1,6 @@
 
-export default function print(window, value){
-    console.log(value)
-    console.log(window);
+export default function print(doc, value){
+    console.log(value);
+    let term = doc.getElementById("terminal")
+    console.log(term);
 }

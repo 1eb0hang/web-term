@@ -7,15 +7,10 @@ let commands = {
 let vars = {};
 
 
-export default function execute(str_cmd){
+export default function execute(doc, str_cmd){
     return new Promise((resolve)=>{
 	const command = str_cmd.split(" ")
-	// if(command.length>1){
-	//     window[command[0]]();
-	// }else{
-	//     window.[command[0]](command.slice(1, command.length-1));
-	// }
-	get_commands()[command[0]](window.document,command)
+	get_commands()[command[0]](doc,command)
 	console.log(`Executed: ${command}`);
 	resolve();
     });
@@ -39,6 +34,24 @@ export function add_command(name, reference){
 
 export function remove_command(name){
     delete commands[name];
+}
+
+export function add_variable(name, value){
+    let override = false;
+    if(name in vars){
+	// TODO: get user input
+	// check if they want to overide exsisting reference
+    }else{
+	override=true;
+    }
+
+    if(override){
+	commands[name]=value;
+    }
+}
+
+export function remove_variable(name){
+    delete vars[name];
 }
 
 
