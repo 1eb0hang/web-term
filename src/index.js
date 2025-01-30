@@ -1,4 +1,4 @@
-import execute from "./command.js"
+import {execute, print} from "./command.js"
 
 function createNewLine() {
     const terminal = document.getElementById('terminal');
@@ -45,6 +45,9 @@ function createNewLine() {
 }
 
 // Initialize the terminal with the first line
+print("Welcome to the web terminal")
+print("Visit https://1eb0hang.github.io/web-term/ for more projects :)")
+
 createNewLine();
 
 // function myLoop(){
