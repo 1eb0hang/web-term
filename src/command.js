@@ -10,7 +10,7 @@ let commands = {
 let vars = {};
 
 
-export default function execute(doc, call, str_cmd){
+export const execute = (doc, call, str_cmd)=>{
     return new Promise((resolve)=>{
 	const command = str_cmd.split(" ")
 	
