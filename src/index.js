@@ -47,7 +47,8 @@ function createNewLine() {
 
 // Initialize the terminal with the first line
 print(document,null,["","Welcome to the web terminal"])
-print(document,null,["", "Visit https://1eb0hang.github.io/web-term/ for more projects :)"])
+print(document,null,["", "Visit https://github.com/1eb0hang/web-term for repo"])
+print(document,null,["", "Also visit https://1eb0hang.github.io/ for more projects :)"])
 print(document, null,[""," ."])
 
 createNewLine();
